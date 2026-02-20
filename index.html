@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shylu Maria Sathiyadhas | Portfolio</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body{
+    background:#f5f7fa;
+    color:#1a1a1a;
+    line-height:1.6;
+    scroll-behavior:smooth;
+}
+
+/* ================= BACKGROUND ANIMATION ================= */
+
+#animation-container{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100vh;
+    z-index:-1;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    pointer-events:none;
+}
+
+#frame{
+    width:80%;
+    max-width:900px;
+    opacity:0.06; /* watermark transparency */
+    filter:grayscale(100%);
+}
+
+/* ================= MAIN CONTENT ================= */
+
+.container{
+    width:85%;
+    max-width:1000px;
+    margin:auto;
+    padding:60px 0;
+}
+
+section{
+    margin-bottom:80px;
+    background:white;
+    padding:40px;
+    border-radius:15px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.08);
+}
+
+h1{
+    font-size:2.5rem;
+    margin-bottom:10px;
+}
+
+h2{
+    font-size:1.6rem;
+    margin-bottom:20px;
+    color:#0077cc;
+    border-bottom:2px solid #0077cc;
+    display:inline-block;
+    padding-bottom:5px;
+}
+
+.contact{
+    color:#555;
+    margin-top:10px;
+}
+
+ul{
+    margin-left:20px;
+}
+
+.skill-list span{
+    display:inline-block;
+    background:#0077cc;
+    color:white;
+    padding:8px 14px;
+    border-radius:20px;
+    margin:5px 5px 5px 0;
+    font-size:0.9rem;
+}
+
+.project{
+    margin-bottom:20px;
+}
+
+footer{
+    text-align:center;
+    padding:20px;
+    font-size:0.9rem;
+    color:#555;
+}
+
+/* Responsive */
+@media(max-width:768px){
+    h1{font-size:2rem;}
+    section{padding:25px;}
+}
+</style>
+
+</head>
+<body>
+
+<!-- SCROLL ANIMATION -->
+<div id="animation-container">
+    <img id="frame" src="frames/ezgif-frame-001.jpg">
+</div>
+
+<div class="container">
+
+    <!-- HEADER -->
+    <section>
+        <h1>Shylu Maria Sathiyadhas</h1>
+        <div class="contact">
+            📍 20/19 A, Konathuvilai, Mancode, Thickanamcode (Post), Kanyakumari - 629804 <br>
+            📞 7598711924 <br>
+            📧 shylusathiya@gmail.com
+        </div>
+    </section>
+
+    <!-- OBJECTIVE -->
+    <section>
+        <h2>Objective</h2>
+        <p>
+            Ambitious ECE graduate aspiring to work in a dynamic environment where I can continuously 
+            learn, innovate, and contribute through my technical and analytical skills.
+        </p>
+    </section>
+
+    <!-- EDUCATION -->
+    <section>
+        <h2>Education</h2>
+        <p><strong>Government College of Engineering, Tirunelveli</strong><br>
+        B.E – Electronics and Communication Engineering (2023–2027)<br>
+        CGPA: 8.89</p>
+        <br>
+        <p><strong>St. Joseph Girls Higher Secondary School</strong><br>
+        12th Grade – 93% (2023)</p>
+    </section>
+
+    <!-- SKILLS -->
+    <section>
+        <h2>Skills</h2>
+        <div class="skill-list">
+            <span>C Programming</span>
+            <span>Python</span>
+            <span>Highly Proficient Communication</span>
+        </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section>
+        <h2>Projects</h2>
+
+        <div class="project">
+            <strong>Smart Irrigation System</strong>
+            <p>
+                A system that provides water for plants automatically when soil moisture is low 
+                using a moisture sensor and DC motor.
+            </p>
+        </div>
+
+        <div class="project">
+            <strong>IoT Based Air Monitoring System</strong>
+            <p>
+                An IoT-based air monitoring system that measures air quality 
+                using humidity and temperature sensors.
+            </p>
+        </div>
+    </section>
+
+    <!-- INTERESTS -->
+    <section>
+        <h2>Interests</h2>
+        <ul>
+            <li>Reading romance novels and books</li>
+            <li>Playing chess</li>
+            <li>Shuttle and cork</li>
+            <li>Learning new technologies</li>
+        </ul>
+    </section>
+
+    <!-- LANGUAGES -->
+    <section>
+        <h2>Languages</h2>
+        <ul>
+            <li>Tamil</li>
+            <li>English</li>
+            <li>Korean (Beginner)</li>
+            <li>Malayalam</li>
+        </ul>
+    </section>
+
+</div>
+
+<footer>
+    © 2026 Shylu Maria Sathiyadhas | Portfolio
+</footer>
+
+<script>
+const frame = document.getElementById("frame");
+const totalFrames = 240;
+
+window.addEventListener("scroll", () => {
+    const scrollTop = window.scrollY;
+    const maxScroll = document.body.scrollHeight - window.innerHeight;
+    const scrollFraction = scrollTop / maxScroll;
+    const frameIndex = Math.min(
+        totalFrames - 1,
+        Math.floor(scrollFraction * totalFrames)
+    );
+
+    const frameNumber = String(frameIndex + 1).padStart(3, '0');
+    frame.src = `frames/ezgif-frame-${frameNumber}.jpg`;
+});
+</script>
+
+</body>
+</html>
